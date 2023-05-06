@@ -1,0 +1,11 @@
+variable "name_prefix" {}
+variable "instance_type" {}
+variable "key_name" {}
+variable "health_path" {}
+variable "max_size" {}
+variable "min_size" {}
+variable "desired_capacity" {}
+variable "traffic_port" {}
+variable "protocol" {}
+variable "action_type" {}
+variable "target_type" {}

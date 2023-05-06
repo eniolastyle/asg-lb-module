@@ -61,24 +61,23 @@ module "listener" {
 
 ## Inputs
 
+| Name              | Description                                                                         | Type   | Default  | Required |
+|-------------------|-------------------------------------------------------------------------------------|--------|----------|----------|
+| `name_prefix`     | Prefix to identify resources                                                      | string | n/a      | yes      |
+| `image_id`        | ID of the AMI to use for the instances                                              | string | n/a      | yes      |
+| `instance_type`   | Instance type to launch                                                             | string | n/a      | yes      |
+| `key_name`        | Name of the key pair to use for the instances                                        | string | n/a      | yes      |
+| `security_group_id`| List of security group IDs to attach to the instances                                | list   | n/a      | yes      |
+| `user_data`       | The user data to provide when launching the instances                                | string | n/a      | yes      |
+| `vpc_id`          | ID of the VPC to launch the instances in                                             | string | n/a      | yes      |
+| `health_path`     | The URL path used to check the health of the instances                               | string | "/health"| no       |
+| `subnets_id`      | List of subnet IDs to launch the instances in                                        | list   | n/a      | yes      |
+| `max_size`        | Maximum number of instances in the ASG                                               | number | 2        | no       |
+| `min_size`        | Minimum number of instances in the ASG                                               | number | 1        | no       |
+| `desired_capacity`| Desired number of instances in the ASG                                               | number | 2        | no       |
+| `listener`        | Object that defines the listener configuration for the Load Balancer                 | object | n/a     | yes      |
+| `tags`            | Map of tags to attach to the resources                                               | map    | {}       | no       |
 
-| Variable   | Description                                      | Type   |  | Default | Required  |
-| ---------- | ------------------------------------------------ | ------ |  | n/a     | yes       |
-| name_prefix | Prefix to identify resources                                | string | | n/a     | yes       |
-| image_id | ID of the AMI to use for the instances                             | string |  | n/a     | yes       |
-| instance_type     | Instance type to launch    | string | | n/a     | yes       |
-| key_name   | Name of the key pair to use for the instances | string |  | n/a     | yes       |
-| security_group_id | Name of the key pair to use for the instances           | list | | n/a     | yes       |
-| user_data | Name of the key pair to use for the instances        | string |
-| security_group_id | 	ID of the VPC to launch the instances in         | string |
-| health_path | 	The URL path used to check the health of the instances           | string |
-| subnets_id |	List of subnet IDs to launch the instances in         | string |
-| max_size | 		Maximum number of instances in the ASG         | string |
-| min_size | Minimum number of instances in the ASG         | string |
-| desired_capacity | Desired number of instances in the ASG         | string |
-| listener |	Object that defines the listener configuration for the Load Balancer          | string |
-| tags | 	Object that defines the listener configuration for the Load Balancer         | string |
-| vpc_id | vpc_id                               | string | | n/a     | yes       |
 
 ## Outputs
 
